@@ -27,7 +27,12 @@ var app = express();
 app.use('/uploads',express.static('uploads'))
 
 
-mongoose.connect('mongodb+srv://sagar:sagar@cluster0.xlv2b.mongodb.net/facebook_mern?retryWrites=true&w=majority')
+
+mongoose.connect('mongodb+srv://sagar:sagar@cluster0.xlv2b.mongodb.net/facebook_mern?retryWrites=true&w=majority').then((success) => {
+  console.log('DB CONNECT SUCCESS');
+}).catch((error) => {
+  console.error(error)
+})
 //('mongodb://localhost:27017/facebook_mern');//should be above the app use
 
 //app.use(cors());
@@ -49,6 +54,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
 //REGISTER Validation/created user
+
 
 app.post('/api/register', [
   check('username').not().isEmpty().withMessage('Username is required')
@@ -300,8 +306,13 @@ app.post('/api/post/:id/share', function (req, res) {
 });
 ///Log Out
 app.get('/api/logout', function (req, res) {
-  req.session.destroy();
+  try{
+    req.session.destroy();
   res.send({ message: 'session destroyed' })
+  }
+  catch(error) {
+    res.send(error)
+  }
 });
 
 
