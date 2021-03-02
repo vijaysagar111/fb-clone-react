@@ -1,0 +1,33 @@
+label{
+    background-color: #fff;
+}
+.form-group{
+    font-family: 'Segoe UI';
+    background-color: #fff;
+}
+.regform{
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    margin: 40px 0 0;
+    padding: 20px 40px 28px;
+    width: 80%;
+}
+
+.regInput{
+    font-size: 17px;
+    
+    width: 100%;
+}
+
+h5{
+    font-size:40px;
+}
+
+.green{
+ background-color: #36A420;
+
+}

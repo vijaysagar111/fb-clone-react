@@ -28,6 +28,9 @@ app.use('/uploads',express.static('uploads'))
 
 
 
+app.use('/static', express.static(__dirname + '/client/build/static'));
+
+
 mongoose.connect('mongodb+srv://sagar:sagar@cluster0.xlv2b.mongodb.net/facebook_mern?retryWrites=true&w=majority').then((success) => {
   console.log('DB CONNECT SUCCESS');
 }).catch((error) => {
@@ -353,5 +356,7 @@ app.delete('/api/profile/delete', function (req, res) {
   res.send({ message: 'Deleted profile' });
 })
 
-
+app.get('*', (req, res)=>{
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+})
 app.listen(process.env.PORT || 8080);
