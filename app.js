@@ -29,7 +29,7 @@ app.use('/uploads',express.static('uploads'))
 //6tryegd847uyehj
 //12qewds09oiukj67tyfhgv
 
-mongoose.connect('mongodb://localhost:27017/facebook_mern')
+mongoose.connect('mongodb+srv://sagar:sagar@cluster0.xlv2b.mongodb.net/facebook_mern?retryWrites=true&w=majority')
 //('mongodb://localhost:27017/facebook_mern');//should be above the app use
 
 //app.use(cors());
