@@ -24,7 +24,6 @@ var { check, validationResult } = require('express-validator/check');
 var path = require('path'); //for deployment
 var app = express();
 
-app.use('/static', express.static(__dirname + '/client/build/static'));
 app.use('/uploads',express.static('uploads'))
 //6tryegd847uyehj
 //12qewds09oiukj67tyfhgv
