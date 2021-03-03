@@ -40,7 +40,7 @@ mongoose.connect('mongodb+srv://sagar:sagar@cluster0.xlv2b.mongodb.net/facebook_
 
 //app.use(cors());
 app.use(cors({ //tis adds session to req, like so: req.session
-  origin: ['https://vigilant-ardinghelli-6b3d97.netlify.app'],
+  origin: ['https://fb-cloned-905ca.web.app'],
   methods: ['GET', 'HEAD','POST', 'DELETE', 'PUT', 'PATCH', 'OPTIONS'],
   credentials: true//allow setting of cookies
 }));
