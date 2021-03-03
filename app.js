@@ -144,9 +144,8 @@ app.post('/api/login', function (req, res) {
       } else {
         //the user was found with the username and password
         // so we can sign in the user by using the session/cookie
-        //req.session is an object, we can add properties to it freely
         req.session.user = user;
-        //req.session.save();
+        req.session.save();
         return res.send({ message: 'You are signed in' });
       }
       console.log(user);
